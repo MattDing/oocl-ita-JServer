@@ -7,6 +7,7 @@ public class Book {
 	private String price;
 	private String author;
 	
+	
 	public Book() {
 		this.id = count;
 		count++;
