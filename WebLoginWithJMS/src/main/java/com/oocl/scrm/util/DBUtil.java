@@ -30,8 +30,6 @@ public class DBUtil {
 		ds.setMaxWaitMillis(10000);
 
 	}
-	
-	
 
 	public static Connection getConnection() {
 		Connection conn = null;
@@ -49,9 +47,15 @@ public class DBUtil {
 	public static void free(Connection conn, PreparedStatement ps, ResultSet rs) {
 		// TODO Auto-generated method stub
 		try {
-			conn.close();
-			ps.close();
-			rs.close();
+			if (conn != null) {
+				conn.close();
+			}
+			if (ps != null) {
+				ps.close();
+			}
+			if (rs != null) {
+				rs.close();
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

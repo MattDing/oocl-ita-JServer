@@ -17,7 +17,24 @@ public class CustomerServiceImpl implements CustomerService{
 
 	public List<Customer> getList() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.findAll();
+	}
+
+	public boolean insert(String id, String name, String age, String password) {
+		// TODO Auto-generated method stub
+		Customer c = new Customer();
+		c.setId(id);
+		c.setName(name);
+		c.setAge(age);
+		c.setPassword(password);
+		return dao.insert(c);
+	}
+
+	public boolean delete(String id) {
+		// TODO Auto-generated method stub
+		Customer c = new Customer();
+		c.setId(id);
+		return dao.delete(c);
 	}
 
 }

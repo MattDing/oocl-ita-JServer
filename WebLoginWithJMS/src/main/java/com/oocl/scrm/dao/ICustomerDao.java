@@ -9,5 +9,7 @@ public interface ICustomerDao {
 	
 	public List<Customer> findAll();
 	
-	public Customer persist(Customer c);
+	public boolean insert(Customer c);
+	
+	public boolean delete(Customer c);
 }
